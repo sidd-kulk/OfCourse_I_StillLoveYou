@@ -7,7 +7,7 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 @RestController
-class HelloController {
+internal class HelloController {
 
     @GetMapping("/truth")
     fun truth(model: Model): String {
