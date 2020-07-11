@@ -8,7 +8,7 @@ import org.springframework.boot.runApplication
 class ToDoApplication // Empty class
 
 fun main(args: Array<String>) {
-    val context = runApplication<ToDoApplication>(*args) {
+    runApplication<ToDoApplication>(*args) {
         setBannerMode(Banner.Mode.CONSOLE)
     }
 }
