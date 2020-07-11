@@ -1,9 +1,10 @@
 package sid.applications.tutorial.services
 
 import org.springframework.stereotype.Component
+import org.springframework.stereotype.Service
 import javax.annotation.PostConstruct
 
-@Component
+@Service // SPECIALIZATION OF @COMPONENT
 class HelloWorldService {
     @PostConstruct
     fun sayHelloIn() {
