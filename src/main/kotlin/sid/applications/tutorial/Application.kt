@@ -8,7 +8,8 @@ import org.springframework.boot.runApplication
 class Application // Empty class
 
 fun main(args: Array<String>) {
-    runApplication<Application>(*args) {
+    val context = runApplication<Application>(*args) {
         setBannerMode(Banner.Mode.CONSOLE)
     }
+    context.beanDefinitionNames.sorted().forEach { println(it) }
 }
