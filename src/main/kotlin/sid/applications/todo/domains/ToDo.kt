@@ -1,5 +1,6 @@
 package sid.applications.todo.domains
 
+import org.hibernate.annotations.GeneratorType
 import java.time.LocalDateTime
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -10,4 +11,10 @@ import javax.persistence.Id
 class ToDo (@Id @GeneratedValue var id: Long?,
             var title: String,
             var description: String,
-            var time: LocalDateTime)
+            var time: LocalDateTime = LocalDateTime.now())
+
+
+class ToDoRequest(
+    var title: String,
+    var description: String
+)
