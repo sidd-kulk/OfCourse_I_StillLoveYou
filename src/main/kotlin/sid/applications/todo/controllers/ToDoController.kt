@@ -18,6 +18,7 @@ class ToDoController(@Autowired private val toDoRepo: ToDoRepo) {
 
     @PostMapping
     fun createTodo(@RequestBody todo: ToDoRequest): ResponseEntity<Any> {
+        toDoRepo.save(ToDo(title=todo.title, description = todo.description))
         return ResponseEntity(HttpStatus.CREATED)
     }
 }
