@@ -21,4 +21,10 @@ class ToDoController(@Autowired private val toDoRepo: ToDoRepo) {
         toDoRepo.save(ToDo(title=todo.title, description = todo.description))
         return ResponseEntity(HttpStatus.CREATED)
     }
+
+    @DeleteMapping("/{id}")
+    fun deleteMapping(@PathVariable id: Long): ResponseEntity<Any> {
+        toDoRepo.delete(toDoRepo.findById(id).get())
+        return ResponseEntity(HttpStatus.OK)
+    }
 }
